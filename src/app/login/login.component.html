@@ -1,0 +1,61 @@
+<mat-toolbar style="background-color: #274e72;" color="primary">
+  <div class="container">
+
+    <div class="right-buttons">
+      <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+        <mat-icon style="color: #000000;">home</mat-icon>
+      </a>
+    </div>
+    <div class="left-buttons">
+      <a routerLink="/register" mat-raised-button>Register</a>
+      <a routerLink="/login" mat-raised-button>Login</a>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="example-container center-container">
+  <form #LoginDetailsForm="ngForm" (ngSubmit)="loginmethod(LoginDetailsForm)" class="example-form" >
+
+    <div class="row">
+      <div class="col-xs-12">
+        <mat-form-field>
+          <mat-label>Enter your username</mat-label>
+          <input matInput placeholder="Username" [(ngModel)]="login.username" name="username" required>
+          <mat-error *ngIf="LoginDetailsForm.controls['username'].errors?.['required']">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput type="password" placeholder="Password" [(ngModel)]="login.password" name="password" required autocomplete="new-password">
+          <mat-error *ngIf="LoginDetailsForm.controls['password'].errors?.['required']">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <mat-label>Select your role</mat-label>
+        <mat-radio-group name="role" (change)="onRoleSelection($event)">
+          <mat-radio-button value="owner">Owner</mat-radio-button>
+          <mat-radio-button value="manager">Manager</mat-radio-button>
+          <mat-radio-button value="receptionist">Receptionist</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+
+
+  <button  type="submit" class="register-button">Login</button>
+  <a href="/register">Don't have an account..?</a>
+
+</form>
+</div>
+

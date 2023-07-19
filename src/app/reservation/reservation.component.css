@@ -1,0 +1,64 @@
+.top-row{
+  padding: 0em 0;
+}
+
+.small-button {
+  max-width: 200px; /* Adjust the max-width as per your preference */
+  width: auto;
+}
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a{
+  margin: 1em;
+}
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-buttons {
+  display: flex;
+  gap: 16px; /* Adjust the gap as needed */
+  margin-right: auto;
+}
+
+
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

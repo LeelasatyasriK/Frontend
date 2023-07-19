@@ -1,0 +1,27 @@
+<div>
+
+<mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/guests" mat-raised-button>Guest Details</a>
+        <a routerLink="/rooms/search" mat-raised-button>Search Room</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons">
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+<br>
+
+<div class="center-content">
+  <h1>Your Booking is successfully Completed..!</h1>
+  <h3>Download your bill here</h3>
+  <button (click)="fetchBill(billId2)">Download</button>
+</div>
+

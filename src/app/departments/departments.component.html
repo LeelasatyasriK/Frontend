@@ -1,0 +1,63 @@
+<div>
+  <mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/departments" mat-raised-button>Departments</a>
+      <a routerLink="/" mat-raised-button>Reports</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons">
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+<br>
+
+
+<div class="page-header">
+  <div class="container">
+    <h1>Departments</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-end">
+      <a routerLink="/owner" color="primary" mat-raised-button class="small-button">
+        <mat-icon>chevron_left</mat-icon>
+        Go Back
+      </a>
+      <a (click)="AddDepartment()" mat-raised-button color="primary" class="ml-1 mt-1">Add Department</a>
+    </div>
+  </div>
+<div>
+  <table class="table table-stripped table-hover mt-3">
+    <thead>
+        <th scope="col">Department Id</th>
+      <th scope="col">Department Name</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of departments">
+           <td>{{d.departmentId}}</td>
+           <td>{{d.departmentName}}</td>
+           <td>
+
+            <button (click)="editDepartments(d.departmentId)">
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+           </td>
+
+      </tr>
+      <td></td>
+    </tbody>
+  </table>
+
+</div>
+</div>
+

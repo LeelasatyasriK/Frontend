@@ -1,0 +1,110 @@
+<div>
+  <mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/rooms" mat-raised-button>Rooms</a>
+        <a routerLink="/staff" mat-raised-button>Staff</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons" >
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+
+
+<div class="page-header">
+  <div class="container">
+    <h1>Staff</h1>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-end">
+      <a routerLink="/manager" color="primary" mat-raised-button class="small-button">
+        <mat-icon>chevron_left</mat-icon>
+        Go Back
+      </a>
+      <a (click)="AddStaff()" mat-raised-button color="primary" class="ml-1 mt-1">Add Staff Details</a>
+    </div>
+  </div>
+
+  <div class="mt-1">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+      <!--Employee id Column -->
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef> Employee Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+      </ng-container>
+
+      <!-- Age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      </ng-container>
+
+      <!-- Adddress Column -->
+      <ng-container matColumnDef="employeeAddress">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeAddress}} </td>
+      </ng-container>
+
+       <!-- salary Column -->
+       <ng-container matColumnDef="salary">
+        <th mat-header-cell *matHeaderCellDef> Salary </th>
+        <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+      </ng-container>
+
+       <!-- Designation Column -->
+       <ng-container matColumnDef="designation">
+        <th mat-header-cell *matHeaderCellDef> Designation </th>
+        <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+      </ng-container>
+
+       <!-- email Column -->
+       <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email Id</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- phone number Column -->
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> Phone Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+      </ng-container>
+
+        <!-- edit Column -->
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <!-- <a [routerLink]="['/staff',element.employeeId]">
+              <mat-icon color="primary">edit</mat-icon>
+            </a> -->
+            <button (click)="editStaff(element.employeeId)">
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div>
+  <mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/rooms" mat-raised-button>Rooms</a>
+        <a routerLink="/staff" mat-raised-button>Staff</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons" >
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+
+<div class="container">
+  <div class="row end-xs mt-1">
+    <div class="col-xs-12">
+      <div class="search-container">
+        <div class="row ">
+          <div class="col-xs-12 end-xs">
+           <a routerLink="/manager" color="primary" mat-raised-button class="small-button">
+             <mat-icon>chevron_left</mat-icon>
+             Go Back
+           </a>
+        </div>
+        </div>
+        <form #filterByAvailability="ngForm" (ngSubmit)="filter(filterByAvailability)">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" ngModel placeholder="Search Room" name="Availability">
+            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
+        <!-- <button mat-raised-button color="primary" class="ml-1 add-button">Add New Room</button> -->
+        <a   (click)="AddRooms()" mat-raised-button color="primary" class="ml-1">Add New Room</a>
+
+      </div>
+    </div>
+
+
+  </div>
+<div>
+  <table class="table table-stripped table-hover mt-3">
+    <thead>
+        <th scope="col">RoomNumber</th>
+      <th scope="col">Type</th>
+      <th scope="col">AvailableStatus</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of rooms">
+           <td>{{d.roomNumber}}</td>
+           <td>{{d.type}}</td>
+           <td>{{d.availableStatus}}</td>
+           <td>{{d.price}}</td>
+           <td>
+
+            <button (click)="editRooms(d.roomNumber)">
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+           </td>
+
+      </tr>
+      <td></td>
+    </tbody>
+  </table>
+
+</div>
+</div>

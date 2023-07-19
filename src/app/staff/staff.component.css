@@ -1,0 +1,100 @@
+.page-header{
+  background: #f1f1f1;
+}
+
+.page-header h1{
+  padding: 16px;
+  margin: 0;
+}
+
+thead{
+  background-color: #0081b4;
+  color:#fff;
+  border: 1px solid grey;
+
+}
+
+.search-input{
+  outline: none;
+  border: 1px solid #CCC;
+  padding:8px 10px;
+  border-radius: 3px;
+}
+
+.search-input:active{
+  border: 1px solid #BBB;
+}
+
+.search-input:focus{
+  border: 1px solid #AAA;
+}
+.ml-1{
+  margin-left: 1em !important;
+}
+
+.mt-1{
+  margin-top: 1em !important;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 5px;
+}
+
+.search-button {
+  padding: 5px 10px;
+}
+
+.add-button {
+  margin-left: 5px;
+}
+.top-row{
+  padding: 0em 0;
+}
+
+.small-button {
+  max-width: 200px; /* Adjust the max-width as per your preference */
+  width: auto;
+}
+
+a{
+  margin: 1em;
+}
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-buttons {
+  display: flex;
+  gap: 16px; /* Adjust the gap as needed */
+  margin-right: auto;
+}
+
+
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

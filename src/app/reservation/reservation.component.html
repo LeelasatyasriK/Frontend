@@ -1,0 +1,141 @@
+<div>
+  <mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/guests" mat-raised-button>Guest Details</a>
+        <a routerLink="/rooms/search" mat-raised-button>Search Room</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons">
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+<br>
+
+<div class="page-header">
+  <div class="container">
+    <br>
+    <h1>Add Booking Details</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12 row end-xs">
+      <a  (click)="goback()" color="primary" mat-raised-button class="small-button">
+        <mat-icon>chevron_left</mat-icon>
+        Go Back
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <form #BookingDetailsForm="ngForm" (ngSubmit)="addreservation(BookingDetailsForm)" class="example-form" >
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Reservation ID</mat-label>
+             <!-- <input type="text" matInput (ngModel)="guestData.guestId" name="guestId"> -->
+             <input  matInput (ngModel)="reservationData.reservationId" name="reservationId" hidden>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="false" >
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>GuestId</mat-label>
+              <input type="text" matInput  [(ngModel)]="guesId" name="GuestId" [readonly]="true">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Room No</mat-label>
+              <input type="number" matInput [(ngModel)]="roomno" name="RoomNo" [readonly]="true">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Number Of Adults</mat-label>
+              <input type="number" matInput (ngModel)="reservationData.numberOfAdults" name="numberOfAdults">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Number Of Children</mat-label>
+              <input type="number" matInput (ngModel)="reservationData.numberOfChildren" name="numberOfChildren">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>CheckIn Date</mat-label>
+              <input matInput [matDatepicker]="checkInPicker" (ngModel)="reservationData.checkInDate" name="checkInDate" [min]="minDate">
+              <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+              <mat-datepicker #checkInPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>CheckOut Date</mat-label>
+              <input matInput [matDatepicker]="checkOutPicker" (focus)="checkOutPicker.open()" (ngModel)="reservationData.checkOutDate" name="checkOutDate" [min]="minDate">
+              <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+              <mat-datepicker #checkOutPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-xs-12">
+            <mat-form-field appearance="outline" class="example-full-width">
+              <mat-label>Number of Nights</mat-label>
+              <!-- <input type="number" matInput (ngModel)="reservationData.numberOfNights" name="numberOfNights"> -->
+              <input type="number" matInput name="numberOfNights" [ngModel]="non" readonly >
+            </mat-form-field>
+         </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="button-container">
+              <!-- <button type="submit" (click)="bookConfirm()">Confirm Booking</button> -->
+              <button type="submit" (click)="bookConfirm(); bookingConfirmed = true">Confirm Booking</button>
+
+              <div class="spacer"></div>
+             <!-- <button (click)="MakePayment(reservationId1)">Make Payment</button> -->
+             <button (click)="MakePayment(reservationId1)" [disabled]="!bookingConfirmed">Make Payment</button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

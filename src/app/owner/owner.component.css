@@ -1,0 +1,49 @@
+a{
+  margin: 1em;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-buttons {
+  display: flex;
+  gap: 16px; /* Adjust the gap as needed */
+}
+
+body {
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%); */
+  background-color:#6666cc;
+}
+
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.left-buttons {
+  display: flex;
+  gap: 16px; /* Adjust the gap as needed */
+}
+
+
+

@@ -1,0 +1,73 @@
+<div>
+  <mat-toolbar style="background-color: #274e72;" color="primary">
+    <div class="container">
+
+      <div class="right-buttons">
+        <a routerLink="/" mat-fab [style.background-color]="'#548ec4'" style="height: 45px; width: 45px;">
+          <mat-icon style="color: #000000;">home</mat-icon>
+        </a>
+        <a routerLink="/guests" mat-raised-button>Guest Details</a>
+        <a routerLink="/rooms/search" mat-raised-button>Search Room</a>
+      </div>
+
+    </div>
+    <!-- <div class="left-buttons">
+      <a routerLink="/" mat-raised-button>Logout</a>
+    </div> -->
+  </mat-toolbar>
+</div>
+<br>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Guest</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-end">
+      <a routerLink="/receptionist" color="primary" mat-raised-button class="small-button">
+        <mat-icon>chevron_left</mat-icon>
+        Go Back
+      </a>
+      <a (click)="AddGuest()" mat-raised-button color="primary" class="ml-1 mt-1">Add Guest Details</a>
+    </div>
+  </div>
+  <div>
+    <table class="table table-stripped table-hover mt-3">
+      <thead>
+        <th scope="col">Guest Name</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of guests">
+             <td>{{d.name}}</td>
+             <td>{{d.email}}</td>
+             <td>{{d.phoneNumber}}</td>
+             <td>{{d.gender}}</td>
+             <td>{{d.age}}</td>
+             <td>{{d.address}}</td>
+
+             <td>
+
+              <button (click)="editGuestDetails(d.guestId)">
+                <mat-icon color="primary">edit</mat-icon>
+              </button>
+             </td>
+
+          </tr>
+        <td></td>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
